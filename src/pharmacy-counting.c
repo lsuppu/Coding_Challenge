@@ -4,7 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #define MAX 200000                                  //Number of records in the input file
-#define INPUTFILE "InputFileContent_Test4.txt"      //Input file location
+#define INPUTFILE "itcont.txt.txt"      //Input file location
 #define OUTPUTFILE "Output.txt"                     //Output file location
 
 typedef struct rec{             //input STRUCT - Heterogenous Data Type
