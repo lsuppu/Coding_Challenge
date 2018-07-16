@@ -1,5 +1,6 @@
 ///bin/true;COMPILER_OPTIONS="-g -Wall -Wextra --std=c99 -O1 -fsanitize=address,undefined";THIS_FILE="$(cd "$(dirname "$0")"; pwd -P)/$(basename "$0")";OUT_FILE="/tmp/build-cache/$THIS_FILE";mkdir -p "$(dirname "$OUT_FILE")";test "$THIS_FILE" -ot "$OUT_FILE" || $(which clang || which gcc) $COMPILER_OPTIONS -xc "$THIS_FILE" -o "$OUT_FILE" || exit;exec "$OUT_FILE" "$@"
 #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
