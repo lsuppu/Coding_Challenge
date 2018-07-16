@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define MAX 2000                                          //Number of records in the input file
+#define MAX 200000                                  //Number of records in the input file
 #define INPUTFILE "InputFileContent_Test4.txt"      //Input file location
-#define OUTPUTFILE "Output.txt"                           //Output file location
+#define OUTPUTFILE "Output.txt"                     //Output file location
 
 typedef struct rec{             //input STRUCT - Heterogenous Data Type
 	int id;                     //id
