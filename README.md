@@ -4,4 +4,4 @@ The C program takes the Input and put the strings of data into a variable and pu
 Then sorintg the dataset into descending order of drug name.
 Then in a loop, counting the number of unique prescribed people and finding the total drug cost grouped by drug name.
 Then printing the output of the required variables into a file.
-Tests included are run on this program and specified outputs are included in the github repository
+Tests included are run on this program and corresponding outputs are included in the github repository
