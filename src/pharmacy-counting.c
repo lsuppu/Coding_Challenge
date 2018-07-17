@@ -1,14 +1,16 @@
-///bin/true;COMPILER_OPTIONS="-g -Wall -Wextra --std=c99 -O1 -fsanitize=address,undefined";THIS_FILE="$(cd "$(dirname "$0")"; pwd -P)/$(basename "$0")";OUT_FILE="/tmp/build-cache/$THIS_FILE";mkdir -p "$(dirname "$OUT_FILE")";test "$THIS_FILE" -ot "$OUT_FILE" || $(which clang || which gcc) $COMPILER_OPTIONS -xc "$THIS_FILE" -o "$OUT_FILE" || exit;exec "$OUT_FILE" "$@"
-#include <stdio.h>
-#include <stdio.h>
+// Solution for the coding challenge in C programming language - Submitted  by Lakshmi sowjanya uppuganti
+// Running correctly on Visual Studio 2013 local desktop
+
+
+#include <stdio.h>                    //Including all the libraries
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define MAX 2000                                          //Number of records in the input file
-#define INPUTFILE "itcont.txt"      //Input file location
-#define OUTPUTFILE "top_cost_drug.txt"                           //Output file location
+#define MAX 20000                       //Total number of records in the input file
+#define INPUTFILE "itcont.txt"          //Input file location
+#define OUTPUTFILE "top_cost_drug.txt"  //Output file location
 
-typedef struct rec{             //input STRUCT - Heterogenous Data Type
+typedef struct rec{             //input STRUCT - For Heterogenous Data Types
 	int id;                     //id
 	char last_name[20];         //prescriber_last_name
 	char first_name[20];        //prescriber_first_name
@@ -16,7 +18,7 @@ typedef struct rec{             //input STRUCT - Heterogenous Data Type
 	float drug_cost;            //drug_cost
 }r;
 
-typedef struct output{          //output STRUCT - Heterogenous Data Type
+typedef struct output{          //output STRUCT - for Heterogenous Data Types
 	char drug_name[30];         //drug_name
 	int num_prescriber;         //Number of unique prescribers
 	float total_cost;           //total drug cost
@@ -26,14 +28,14 @@ int main() {
 	FILE *fp; 	struct rec record[MAX]; r t; op output[MAX];
 	char line[200],header_buffer[1000], *item,*temp;  int count = 0; 
 	
-	fp = fopen(INPUTFILE, "r");                    //Reading from the Input file
+	fp = fopen(INPUTFILE, "r");                    //Reading data from the Input file into strings
 	if (fp == NULL) {
 		fprintf(stderr, "Error reading file\n");   //Handling Error for empty file
 		return 1;
 	}
 	if (fp != NULL){
-		    fgets(header_buffer, 1000, fp);               //Handling the headers in the file
-			while (fgets(line, 200, fp) != NULL){         //Handling the data   
+		    fgets(header_buffer, 1000, fp);           //Handling the headers in the file
+		while (fgets(line, 200, fp) != NULL){         //Pulling the data from the string and assign it to correspomding variables
 				item = strtok(line, ",");   	 record[count].id = atoi(item);
 				item = strtok(NULL, ",");        strcpy(record[count].last_name, item);
 				item = strtok(NULL, ",");        strcpy(record[count].first_name, item);
